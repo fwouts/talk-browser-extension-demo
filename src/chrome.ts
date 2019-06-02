@@ -1,18 +1,20 @@
-let fakeChrome;
+import realChrome from "./real-chrome";
+
+let fakeChrome: Chrome;
 
 export const chrome = getChromeApi();
 
 function getChromeApi() {
-  if (process.env.NODE_ENV === "development" || !global.chrome) {
+  if (process.env.NODE_ENV === "development" || !realChrome) {
     fakeChrome = fakeChrome || buildFakeChrome();
     return fakeChrome;
   } else {
-    return global.chrome;
+    return realChrome;
   }
 }
 
-function buildFakeChrome() {
-  const listeners = [];
+function buildFakeChrome(): Chrome {
+  let listeners: MessageListener[] = [];
   return {
     runtime: {
       onMessage: {
@@ -31,3 +33,15 @@ function buildFakeChrome() {
     }
   };
 }
+
+export interface Chrome {
+  runtime: {
+    onMessage: {
+      addListener(listener: MessageListener): void;
+      removeListener(listener: MessageListener): void;
+    };
+    sendMessage(message: any): void;
+  };
+}
+
+export type MessageListener = (message: any) => void;

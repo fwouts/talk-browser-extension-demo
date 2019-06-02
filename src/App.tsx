@@ -7,7 +7,7 @@ const App = () => {
     message: "Nice!"
   });
   useEffect(() => {
-    const listener = message => setState(message);
+    const listener = (message: { message: string }) => setState(message);
     chrome.runtime.onMessage.addListener(listener);
     return () => chrome.runtime.onMessage.removeListener(listener);
   }, []);

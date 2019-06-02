@@ -4,14 +4,14 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    background: "./src/background.js",
-    popup: "./src/popup.jsx"
+    background: "./src/background.ts",
+    popup: "./src/popup.tsx"
   },
   output: {
     filename: "[name].js"
   },
   resolve: {
-    extensions: [".jsx", ".js"]
+    extensions: [".jsx", ".js", ".tsx", ".ts"]
   },
   module: {
     rules: [
@@ -19,6 +19,11 @@ module.exports = {
         include: __dirname + "/src",
         loader: "babel-loader",
         test: /\.jsx?$/
+      },
+      {
+        include: __dirname + "/src",
+        loader: "ts-loader",
+        test: /\.tsx?$/
       }
     ]
   },

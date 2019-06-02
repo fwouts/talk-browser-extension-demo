@@ -30,5 +30,8 @@ module.exports = {
     }),
     new CopyPlugin([{ from: "manifest.json", to: "." }])
   ],
-  mode: "development"
+  mode: "development",
+  devServer: {
+    port: 9000
+  }
 };

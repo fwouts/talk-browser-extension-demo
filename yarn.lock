@@ -2299,6 +2299,11 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
+nicejob@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/nicejob/-/nicejob-1.0.1.tgz#c45dc76d322ff18cacfb0a81e3a0f44e9d5b05cd"
+  integrity sha1-xF3HbTIv8Yys+wqB46D0Tp1bBc0=
+
 no-case@^2.2.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"

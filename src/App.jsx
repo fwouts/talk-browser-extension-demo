@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { chrome } from "./chrome";
 
 const App = () => {
   const [state, setState] = useState({

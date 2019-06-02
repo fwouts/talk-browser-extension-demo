@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { chrome } from "./chrome";
+import { hot } from "react-hot-loader/root";
 
 const App = () => {
   const [state, setState] = useState({
@@ -13,4 +14,4 @@ const App = () => {
   return <h1>{state.message}</h1>;
 };
 
-export default App;
+export default hot(App);
